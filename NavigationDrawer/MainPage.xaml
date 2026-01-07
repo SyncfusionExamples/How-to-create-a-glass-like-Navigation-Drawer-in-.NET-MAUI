@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigationDrawer.MainPage"
+             xmlns:navigationDrawer="clr-namespace:Syncfusion.Maui.NavigationDrawer;assembly=Syncfusion.Maui.NavigationDrawer"
+             xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core">
+
+    <Grid>
+        <Image Source="beach2.jpg" Aspect="AspectFill" />
+        <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer" EnableLiquidGlassEffect="True">
+            <navigationDrawer:SfNavigationDrawer.ContentView>
+                <Grid RowDefinitions="80, *">
+                    <core:SfGlassEffectView EffectType="Regular">
+                        <Grid>
+                            <Button Text="&#xe719;" Clicked="OnPrimaryDrawerToggled" FontFamily="MauiMaterialAssets" FontAttributes="Bold" FontSize="24" TextColor="Black" BackgroundColor="Transparent" HorizontalOptions="Start" Grid.Column="0" />
+                        </Grid>
+                    </core:SfGlassEffectView>
+                    <Label Grid.Row="1" Text="Main Content" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" Margin="16" />
+                </Grid>
+            </navigationDrawer:SfNavigationDrawer.ContentView>
+
+            <navigationDrawer:SfNavigationDrawer.DrawerSettings>
+                <navigationDrawer:DrawerSettings x:Name="primaryDrawer" Position="Left" ContentBackground="Transparent" DrawerWidth="300" EnableSwipeGesture="True" Transition="SlideOnTop">
+                    <navigationDrawer:DrawerSettings.DrawerContentView>
+                        <ScrollView>
+                            <VerticalStackLayout Padding="12" Spacing="2">
+                                <Label Text="Mail" FontAttributes="Bold" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="12, 0" />
+                                <Label Text="Inbox" Padding="12,14" VerticalTextAlignment="Center" FontSize="15" />
+                                <Label Text="Drafts" Padding="12,14" VerticalTextAlignment="Center" FontSize="15" />
+                                <Label Text="Sent" Padding="12,14" VerticalTextAlignment="Center" FontSize="15" />
+                                <Label Text="Starred" Padding="12,14" VerticalTextAlignment="Center" FontSize="15" />
+                                <Label Text="Spam" Padding="12,14" VerticalTextAlignment="Center" FontSize="15" />
+                                <Label Text="Trash" Padding="12,14" VerticalTextAlignment="Center" FontSize="15" />
+                            </VerticalStackLayout>
+                        </ScrollView>
+                    </navigationDrawer:DrawerSettings.DrawerContentView>
+                </navigationDrawer:DrawerSettings>
+            </navigationDrawer:SfNavigationDrawer.DrawerSettings>
+        </navigationDrawer:SfNavigationDrawer>
+    </Grid>
+
+</ContentPage>
